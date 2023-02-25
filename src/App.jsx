@@ -1,10 +1,12 @@
-import React from 'react';
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import KakaoMap from './Map/KakaoMap';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>wef</Routes>
+      <Routes>
+        <Route path="/" element={<KakaoMap />} />
+      </Routes>
     </BrowserRouter>
   );
 }
