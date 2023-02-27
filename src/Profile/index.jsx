@@ -8,9 +8,9 @@ function ProfileBox() {
       <ProfileImg />
       <h3 style={{ color: 'while', textAlign: 'center', marginTop: '20px' }}> 영민인데용 </h3>
       <p style={{ color: 'darkgray', textAlign: 'center' }}> dbdudals100@naver.com </p>
-      <ProfileBtn> 프로필 수정 </ProfileBtn>
-      <ProfileBtn> 내가 작성한 글</ProfileBtn>
-      <ProfileBtn> 로그아웃 </ProfileBtn>
+      <ProfileBtn>프로필 수정</ProfileBtn>
+      <ProfileBtn>내가 작성한 글</ProfileBtn>
+      <ProfileBtn>로그아웃</ProfileBtn>
     </ProfileState>
   );
 }
