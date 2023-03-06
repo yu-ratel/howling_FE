@@ -7,16 +7,14 @@ import logoSrc from '../howling_img.png';
 function Start() {
   return (
     <Container>
-      <Wrapper>
-        <Logo
-          animate={{ y: 0, scale: 0.2 }}
-          initial={{ y: -100, scale: 0 }}
-          transition={{ type: 'spring', duration: 3, bounce: 0.3 }}
-          src={logoSrc}
-          alt="logo-img"
-        />
-        <Title>Howling</Title>
-      </Wrapper>
+      <Logo
+        animate={{ y: 0, scale: 0.2 }}
+        initial={{ y: -100, scale: 0 }}
+        transition={{ type: 'spring', duration: 3, bounce: 0.3 }}
+        src={logoSrc}
+        alt="logo-img"
+      />
+      <Title>Howling</Title>
     </Container>
   );
 }
@@ -33,10 +31,10 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Wrapper = styled.div`
-  width: 600;
-  height: 600;
-`;
+// const Wrapper = styled.div`
+//   width: 600;
+//   height: 600;
+// `;
 
 const Logo = styled(motion.img)`
   img {
