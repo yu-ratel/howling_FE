@@ -6,14 +6,14 @@ import logoSrc from '../howling_img.png';
 function Start() {
   return (
     <Container>
-      <ImgWrap
-        animate={{ y: 0, scale: 0.2 }}
+      <LogoImg
+        animate={{ y: 0, scale: 1 }}
         initial={{ y: -100, scale: 0 }}
-        transition={{ type: 'spring', duration: 2.5, bounce: 0.3 }}
-      >
-        <motion.img src={logoSrc} alt="logo-img" />
-        <Title>Howling</Title>
-      </ImgWrap>
+        transition={{ type: 'spring', duration: 3, bounce: 0.3 }}
+        src={logoSrc}
+        alt="logo-img"
+      />
+      <Title>Howling</Title>
     </Container>
   );
 }
@@ -23,22 +23,21 @@ export default Start;
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: rgb(23, 22, 48);
-`;
-
-const ImgWrap = styled(motion.div)`
-  width: 240;
-  height: 240;
+  background-color: rgb(35, 35, 70);
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
   justify-content: center;
+`;
+
+const LogoImg = styled(motion.img)`
+  width: 240px;
+  height: 240px;
 `;
 
 const Title = styled.h1`
   color: white;
-  font-size: 250%;
+  font-size: 50px;
   font-style: italic;
   font-family: 'Times New Roman', Times, serif;
 `;
