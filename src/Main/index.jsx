@@ -9,7 +9,7 @@ function Main() {
   useEffect(() => {
     const timer = setTimeout(() => {
       pageSet(true);
-    }, 2000);
+    }, 2500);
   });
 
   return (
