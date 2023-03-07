@@ -42,5 +42,4 @@ const Container = styled.div`
 
 const MainPage = styled.div`
   display: ${(props) => (props.flag === true ? null : 'none')};
-  /* visibility: ${(props) => (props.flag === true ? 'visible' : 'hidden')}; */
 `;
