@@ -1,8 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Profile from './Profile';
-import KakaoMap from './Map/KakaoMap';
-import Start from './Start';
+import Main from './Main';
 
 function App() {
   const [page, pageSet] = useState(false);
@@ -14,9 +12,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Profile />
       <Routes>
-        {page === true ? <Route path="/" element={<KakaoMap />} /> : <Route path="/" element={<Start />} />}
+        <Route path="/" element={<Main />} />
       </Routes>
     </BrowserRouter>
   );

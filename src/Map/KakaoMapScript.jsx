@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const { kakao } = window;
 
 export default function KakaoMapScript() {
@@ -7,9 +6,37 @@ export default function KakaoMapScript() {
     center: new kakao.maps.LatLng(33.450701, 126.570667),
     level: 3,
     draggable: false,
+    draggable: false,
+    level: 2,
   };
   const map = new kakao.maps.Map(container, options);
 
+  function displayLevel() {
+    const levelEl = document.getElementById('maplevel');
+    levelEl.innerHTML = `현재 지도 레벨은  ${map.getLevel()} 레벨입니다.`;
+  }
+
+  function zoomIn() {
+    // 현재 지도의 레벨을 얻어옵니다
+    const level = map.getLevel();
+
+    // 지도를 1레벨 내립니다 (지도가 확대됩니다)
+    map.setLevel(level - 1);
+
+    // 지도 레벨을 표시합니다
+    displayLevel();
+  }
+
+  function zoomOut() {
+    // 현재 지도의 레벨을 얻어옵니다
+    const level = map.getLevel();
+
+    // 지도를 1레벨 올립니다 (지도가 축소됩니다)
+    map.setLevel(level + 1);
+
+    // 지도 레벨을 표시합니다
+    displayLevel();
+  }
   // const marker = new kakao.maps.Marker({
   //   position: map.getCenter(),
   // });
