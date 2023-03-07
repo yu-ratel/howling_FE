@@ -22,8 +22,6 @@ function Main() {
       ) : (
         <Start />
       )}
-      {/* <Profile />
-      <KakaoMap /> */}
     </Container>
   );
 }
