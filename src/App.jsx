@@ -15,9 +15,10 @@ function App() {
   return (
     <BrowserRouter>
       {/* <Profile /> */}
-      <Routes>
-        {page === true ? <Route path="/" element={<KakaoMap />} /> : <Route path="/" element={<Start />} />}
-      </Routes>
+      <Start />
+      {/* <Routes>
+{page === true ? <Route path="/" element={<KakaoMap />} /> : <Route path="/" element={<Start />} />}
+      </Routes> */}
     </BrowserRouter>
   );
 }
