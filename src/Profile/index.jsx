@@ -18,57 +18,62 @@ function ProfileBox() {
 function Profile() {
   const [state, setState] = useState(false);
   return (
-    <div>
+    <ProfileContainer>
       <Temporary onClick={() => setState(!state)} />
       {state ? <ProfileBox /> : null}
-    </div>
+    </ProfileContainer>
   );
 }
 
 export default Profile;
 
 const Temporary = styled.button`
-float: right;
-width: 80px;
-height: 80px;
-border-radius: 70%;
-border: 0;
-outline: 0;
-background-image: url(${profileLogo});
-background-size: cover;
+  float: right;
+  width: 80px;
+  height: 80px;
+  border-radius: 70%;
+  border: 0;
+  outline: 0;
+  background-image: url(${profileLogo});
+  background-size: cover;
 `;
 
 const ProfileBtn = styled.button`
-width: 200px;
-height: 40px;
-border: 0;
-text-align:start;
-background-color: gray;
-color: white;
+  width: 200px;
+  height: 40px;
+  border: 0;
+  text-align: start;
+  background-color: gray;
+  color: white;
 `;
 
 const ProfileImg = styled.h1`
-width: 70px;
-height: 70px;
-border-radius: 70%;
-border: 0;
-outline: 0;
-background-image: url(${profileLogo});
-background-size: cover;
-display: block;
-margin-top: 10px;
-margin-left: auto;
-margin-right: auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 70%;
+  border: 0;
+  outline: 0;
+  background-image: url(${profileLogo});
+  background-size: cover;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const ProfileState = styled.div`
-position: fixed;
-z-index: 999;
-right: 10px;
-margin-top: 30px;
-width: 200px;
-height: 300px;
-border-radius: 10%;
-background-color: gray;
-color: white;
+  position: fixed;
+  z-index: 999;
+  right: 10px;
+  margin-top: 30px;
+  width: 200px;
+  height: 300px;
+  border-radius: 10%;
+  background-color: gray;
+  color: white;
+`;
+
+const ProfileContainer = styled.div`
+  width: 100%;
+  z-index: 999;
 `;
