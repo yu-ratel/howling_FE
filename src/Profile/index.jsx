@@ -110,20 +110,19 @@ color: white;
 
 const ToggleState = styled.div`
 display: flex;
-flex-direction: column;
+flex-direction: row;
 position: absolute;
+align-items: flex-start;
 z-index: 999;
-margin-top: 10px;
-width: 200px;
-height: 300px;
-background-color: gray;
+top: 30px;
+left: 70px;
 `;
 
 const ToggleMenuList = styled.button`
-width: 200px;
+width: 70px;
 height: 40px;
 border: 0;
 text-align:start;
-background-color: gray;
-color: white;
+background-color: white;
+color: balck;
 `;
