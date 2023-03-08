@@ -39,9 +39,9 @@ function ProfileBox() {
       <ProfileImg />
       <h3 style={{ color: 'while', textAlign: 'center', marginTop: '20px' }}> 영민인데용 </h3>
       <p style={{ color: 'darkgray', textAlign: 'center' }}> dbdudals100@naver.com </p>
-      <ProfileBtn> 프로필 수정 </ProfileBtn>
-      <ProfileBtn> 내가 작성한 글</ProfileBtn>
-      <ProfileBtn> 로그아웃 </ProfileBtn>
+      <ProfileBtn>프로필 수정</ProfileBtn>
+      <ProfileBtn>내가 작성한 글</ProfileBtn>
+      <ProfileBtn>로그아웃</ProfileBtn>
     </ProfileState>
   );
 }
@@ -72,26 +72,26 @@ background-size: cover;
 `;
 
 const ProfileBtn = styled.button`
-width: 200px;
-height: 40px;
-border: 0;
-text-align:start;
-background-color: gray;
-color: white;
+  width: 200px;
+  height: 40px;
+  border: 0;
+  text-align: start;
+  background-color: gray;
+  color: white;
 `;
 
 const ProfileImg = styled.h1`
-width: 70px;
-height: 70px;
-border-radius: 70%;
-border: 0;
-outline: 0;
-background-image: url(${profileLogo});
-background-size: cover;
-display: block;
-margin-top: 10px;
-margin-left: auto;
-margin-right: auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 70%;
+  border: 0;
+  outline: 0;
+  background-image: url(${profileLogo});
+  background-size: cover;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const ProfileState = styled.div`

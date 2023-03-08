@@ -1,13 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Profile from './Profile';
-import KakaoMap from './Map/KakaoMap';
+import Main from './Main';
 
 function App() {
   return (
     <BrowserRouter>
-      <Profile />
       <Routes>
-        <Route path="/" element={<KakaoMap />} />
+        <Route path="/" element={<Main />} />
       </Routes>
     </BrowserRouter>
   );
