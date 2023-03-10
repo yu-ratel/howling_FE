@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import KakaoMap from '../Map/KakaoMap';
-import Profile from '../Profile';
+import Header from '../Header';
 
 function Main() {
   return (
     <Container>
-      <Profile />
+      <Header />
       <KakaoMap />
     </Container>
   );
