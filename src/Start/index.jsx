@@ -25,6 +25,10 @@ const Container = styled.div`
   height: 100vh;
   background-color: rgb(35, 35, 70);
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
   flex-direction: column;
   align-items: center;
   justify-content: center;

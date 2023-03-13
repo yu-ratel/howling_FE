@@ -10,27 +10,7 @@ function ProfileImage() {
   return (
     <>
       <ProfileImg type="button" onClick={() => setModalIsOpen(true)} />
-      <Modal
-        style={{
-          overlay: { backgroundColor: 'rgba(0, 0, 0, 0.3)', zIndex: '999' },
-          content: {
-            position: 'fixed',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-end',
-            top: 'fit-content',
-            left: 'fit-content',
-            bottom: 'fit-content',
-            right: 'fit-content',
-            transform: 'translate(530%, 5%)',
-            border: '0',
-            boxShadow: '0 0 5px 2px grey',
-            borderRadius: '20px',
-          },
-        }}
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-      >
+      <Modal style={StyledModal} isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
         <CloseBtn onClick={() => setModalIsOpen(false)}>X</CloseBtn>
         <ProfileModal />
       </Modal>
@@ -58,3 +38,21 @@ const CloseBtn = styled.button`
   }
   font-size: 20px;
 `;
+
+const StyledModal = {
+  overlay: { backgroundColor: 'rgba(0, 0, 0, 0.3)', zIndex: '999' },
+  content: {
+    position: 'fixed',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    top: 'fit-content',
+    left: 'fit-content',
+    bottom: 'fit-content',
+    right: 'fit-content',
+    transform: 'translate(530%, 5%)',
+    border: '0',
+    boxShadow: '0 0 5px 2px grey',
+    borderRadius: '20px',
+  },
+};
