@@ -1,9 +1,11 @@
 import { React, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { TbMenu } from 'react-icons/tb';
 import { GiWolfHowl } from 'react-icons/gi';
 import profileImg from '../youngmin.jpeg';
 import loginIcons from '../kakao.png';
+import KakaoAuthURL from '../Login/OAuth';
 
 function Header() {
   const [state, setState] = useState(false);
@@ -11,7 +13,9 @@ function Header() {
     <HeaderBox>
       <Menu />
       <Logo />
-      <LoginIcons />
+      <Link to={KakaoAuthURL}>
+        <LoginIcons />
+      </Link>
       <Profile onClick={() => setState(!state)} />
       {state ? <ProfileBox /> : null}
     </HeaderBox>
