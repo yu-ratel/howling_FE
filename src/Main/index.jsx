@@ -1,9 +1,9 @@
-import { isVisible } from '@testing-library/user-event/dist/utils';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import KakaoMap from '../Map/KakaoMap';
 import Profile from '../Profile';
 import Start from '../Start';
+import ProfileImg from '../Modal/ProfileImg';
 
 function Main() {
   const [load, setLoad] = useState(false);
@@ -15,20 +15,22 @@ function Main() {
 
   return (
     <Container>
-      {/* {page === true ? (
+      {load ? (
         <div>
           <Profile />
           <KakaoMap />
         </div>
       ) : (
         <Start />
-      )} */}
+      )}
 
-      {load === true ? null : <Start />}
+      {/* {!load && <Start />}
       <MainPage flag={load}>
         <Profile />
         <KakaoMap />
-      </MainPage>
+      </MainPage> */}
+
+      {/* <ProfileImg /> */}
     </Container>
   );
 }
@@ -41,5 +43,7 @@ const Container = styled.div`
 `;
 
 const MainPage = styled.div`
-  display: ${(props) => (props.flag === true ? null : 'none')};
+  width: 100vw;
+  height: 100vh;
+  /* display: ${(props) => (props.flag === true ? 'block' : 'none')}; */
 `;
