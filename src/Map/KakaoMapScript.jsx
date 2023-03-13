@@ -9,21 +9,38 @@ export default function KakaoMapScript() {
     level: 3, // 지도의 확대 레벨
   };
 
-  const map = new kakao.maps.Map(container, options); // 지도를 생성
+  const kakaoMap = new kakao.maps.Map(container, options); // 지도를 생성
 
-  const marker = new kakao.maps.Marker({}); // 마커 생성
+  const mockData = [
+    [37.295995, 127.147474, 1],
+    [37.294587, 127.150755, 2],
+    [37.298047, 127.150412, 3],
+    [37.295557, 127.146324, 4],
+  ];
 
-  marker.setMap(map); // 마커 실행
+  for (let i = 0; i < mockData.length; i++) {
+    const marker = new kakao.maps.Marker({
+      position: new kakao.maps.LatLng(mockData[i][0], mockData[i][1]),
+      map: kakaoMap,
+    }); // 마커 생성
 
-  marker.setDraggable(true);
+    marker.setMap(kakaoMap); // 마커 실행
 
-  kakao.maps.event.addListener(map, 'mouseup', (mouseEvent) => {
+    marker.setDraggable(true);
+
+    kakao.maps.event.addListener(marker, 'click', (mouseEvent) => {
+      console.log(mockData[i][2]);
+    });
+  }
+
+  kakao.maps.event.addListener(kakaoMap, 'click', (mouseEvent) => {
     // 클릭한 위치 경도 위도 가져옴
     const latlng = mouseEvent.latLng;
+    kakao.maps.Marker.position = latlng;
+    kakao.maps.Marker.map = kakaoMap;
+    // marker.addPosition(latlng); // 마커 클릭한 위치로 옮김
 
-    marker.setPosition(latlng); // 마커 클릭한 위치로 옮김
-
-    const message = `경도는 ${latlng.getLat()}이고, 위도는 ${latlng.getLng()}입니다.`;
+    const message = `경도는 ${latlng.getLat().toFixed(6)}이고, 위도는 ${latlng.getLng().toFixed(6)}입니다.`;
     console.log(message);
   });
 
@@ -31,8 +48,7 @@ export default function KakaoMapScript() {
   function displayMarker(locPosition, message) {
     // 마커 생성
     const locationMarker = new kakao.maps.Marker({
-      // eslint-disable-next-line object-shorthand
-      map: map,
+      map: kakaoMap,
       position: locPosition, // 위치는 현재 위치
     });
 
@@ -45,9 +61,9 @@ export default function KakaoMapScript() {
       removable: iwRemoveable,
     });
 
-    infowindow.open(map, locationMarker);
+    infowindow.open(kakaoMap, locationMarker);
 
-    map.setCenter(locPosition);
+    kakaoMap.setCenter(locPosition);
   }
 
   if (navigator.geolocation) {
@@ -57,7 +73,6 @@ export default function KakaoMapScript() {
 
       const locPosition = new kakao.maps.LatLng(lat, lon);
       const message = '내 위치~';
-      console.log(lat, lon);
       displayMarker(locPosition, message);
     });
   } else {
