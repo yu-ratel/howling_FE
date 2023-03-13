@@ -1,4 +1,3 @@
-import { isVisible } from '@testing-library/user-event/dist/utils';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import KakaoMap from '../Map/KakaoMap';
@@ -15,20 +14,9 @@ function Main() {
 
   return (
     <Container>
-      {/* {page === true ? (
-        <div>
-          <Profile />
-          <KakaoMap />
-        </div>
-      ) : (
-        <Start />
-      )} */}
-
-      {load === true ? null : <Start />}
-      <MainPage flag={load}>
-        <Profile />
-        <KakaoMap />
-      </MainPage>
+      {!load && <Start />}
+      <Profile />
+      <KakaoMap />
     </Container>
   );
 }
@@ -38,8 +26,4 @@ export default Main;
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-`;
-
-const MainPage = styled.div`
-  display: ${(props) => (props.flag === true ? null : 'none')};
 `;
